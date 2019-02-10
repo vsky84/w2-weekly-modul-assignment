@@ -14,10 +14,15 @@ import { SecondPage } from '../second/second';
   templateUrl: 'first.html',
 })
 export class FirstPage {
-
+  nama=""
+  umur="";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  ngOnInit() {
+    this.nama = this.navParams.get("nama");
+    this.umur = this.navParams.get("umur");
+    console.log(this.nama + " berumur " + this.umur);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
   }
